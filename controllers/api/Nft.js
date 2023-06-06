@@ -2,6 +2,7 @@ const Joi = require("joi");
 const Nft = require("../../models/Nft");
 const Transaction = require("../../models/Transaction");
 const User = require("../../models/User");
+const PurchasedNft = require("../../models/PurchasedNft")
 const Response = require("../../services/Response");
 const Razorpay = require("razorpay");
 
@@ -48,14 +49,8 @@ const createNft = async (req, res) => {
 
 const fetchNfts = async (req, res) => {
     try {
-        console.log();
         const allNfts = await Nft.find({ owner: { $ne: req.authUserId } }).populate("owner");
-        // return Response.successResponseData(res, "Nft fetched successfully", allNfts);
-        // const allNfts = await Nft.find();
-        // console.log("allNfts", allNfts);
         return res.render("nft/index", { nfts: allNfts })
-
-
     } catch (error) {
         console.log("error=>", error);
         return res.status(500).json({ error: "Something went wrong" });
@@ -63,7 +58,6 @@ const fetchNfts = async (req, res) => {
 }
 
 const checkoutNft = async (req, res) => {
-    console.log("yo");
     try {
         const rzpKey = process.env.Rzp_Key;
         const nftId = req.query.nftid;
@@ -94,8 +88,6 @@ const purchaseNft = async (req, res) => {
         const fetchNft = await Nft.findOne({ _id: nftId });
 
         const user = await User.findOne({ _id: req.authUserId });
-
-        console.log("fetchNft", fetchNft);
 
         var options = {
             amount: fetchNft.price,  // amount in the smallest currency unit
@@ -172,6 +164,14 @@ const verifyPurchase = async (req, res) => {
             new: true
         })
 
+        if(transaction){
+            await PurchasedNft.create({
+                customer_id: req.authUserId,
+                nft_id: transaction.nft_id,
+                transaction_id: transaction._id
+            })
+        }
+
         return Response.successResponseData(res, "Transaction updated successfully", transaction)
     }
     catch (error) {
@@ -180,10 +180,43 @@ const verifyPurchase = async (req, res) => {
     }
 }
 
+
+//this api will fetch nfts purchased bu user
+const userPurchasedNfts = async (req, res) => {
+    try {
+        
+        const userNfts = await PurchasedNft.find({customer_id: req.authUserId})
+        .populate({
+            path:'nft_id',
+            populate: 'owner',
+        });
+        
+        return Response.successResponseData(res, "Nfts fetched successfully", userNfts);
+
+    } catch (error) {
+        console.log("error", error);
+        return res.status(500).json({ error: "Something went wrong" })
+    }
+}
+
+const fetchUserCreatedNfts = async (req, res) => {
+    try {
+        
+        const createdNfts = await Nft.find({owner: req.authUserId});
+        
+        return Response.successResponseData(res, "Nfts fetched successfully", createdNfts);
+
+    } catch (error) {
+        console.log("error", error);
+        return res.status(500).json({ error: "Something went wrong" })
+    }
+}
 module.exports = {
     createNft,
     purchaseNft,
     fetchNfts,
     checkoutNft,
-    verifyPurchase
+    verifyPurchase,
+    userPurchasedNfts,
+    fetchUserCreatedNfts
 }
