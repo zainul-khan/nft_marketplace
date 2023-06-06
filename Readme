@@ -1,0 +1,2 @@
+Install razorpay
+In your server file, instantiate the Razorpay instance with your key_id and key_secret. You should generate the API keys on the Razorpay Dashboard and add them here.

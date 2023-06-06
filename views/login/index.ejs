@@ -1,0 +1,81 @@
+<!-- login.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f1f1f1;
+    }
+
+    .login-form {
+      background: #ffffff;
+      padding: 20px;
+      width: 300px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin:  0 auto;
+    }
+
+
+    .login-form h1 {
+      text-align: center;
+    }
+
+    .login-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .login-form input[type="submit"] {
+      background: #4CAF50;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .login-form input[type="submit"]:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-form">
+    <h1>Login Page</h1>
+    
+    <form method="POST" action="/api/v1/user/login">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="email" required>
+      </div>
+      
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      
+      <div>
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
