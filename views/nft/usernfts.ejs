@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .user-nft-card{
+            margin: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+        }
+        .user-nft-item{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            color: #fff;
+        }
+        .user-nft-image{
+            width:300px;
+            height: 400px;
+            border-radius: 15px;
+        }
+        .user-nft-title{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-bottom: 1px solid #616676;;
+        }
+        .price-box{
+            border: 1px solid #25b18e;
+            height: 30px;
+            width: 100px;
+            color: #25b18e;
+            text-align: center;
+            margin: 5px;
+            border-radius: 2px;
+        }
+        .user-nft-name{
+            
+        }
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Nfts</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+</head>
+<body>
+    <%-include ('../partials/navbar.ejs')-%>
+  
+
+<div class="user-nft-card">
+    <% nfts.forEach(nft => { %>
+      <div class="user-nft-item">
+        <img class="user-nft-image" src="https://assets.website-files.com/637be5d0f2736f32b8ad98cd/638e627f643cfa7dd56beb96_qIsIXihKZeVDop6AZWt1j6gxOnYZ_oGfr09PzlJDL_H4YWasvDrNuTXK8Qrmh0oL6ppWI3RaGU5vMif2gNwO38UdWWei4eZCNhbfdrVlm5qHV3zVYIk6qtBuFvdkoo0HexhmSmvn.jpeg" alt="<%= nft.name %>">
+        <div class="user-nft-title">
+            <h2 class="user-nft-name"><%= nft.name %></h2>
+            <div class="price-box">
+
+                <p class="user-nft-price">Price: <%= nft.price %></p>
+            </div>
+        </div>
+        <p class="user-nft-description"><%= nft.description %></p>
+      </div>
+    <% }) %>
+</div>
+<%-include ('create.ejs')-%>
+
+
+
+
+</body>
+</html>

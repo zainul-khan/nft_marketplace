@@ -48,10 +48,11 @@
       cursor: pointer;
     }
   </style>
+  <link rel="stylesheet" type="text/css" href="/public/css/style.css">
 </head>
 <body>
+  <%-include ('../partials/navbar.ejs')-%>
   <h1>NFTs</h1>
-
   <div class="nft-card">
     <% nfts.forEach(nft => { %>
       <div class="nft-item">

@@ -12,7 +12,8 @@ const {
     checkoutNft,
     verifyPurchase,
     userPurchasedNfts,
-    fetchUserCreatedNfts
+    fetchUserCreatedNfts,
+    // userNftPage
 } = require("./api/Nft")
 
 module.exports = {
@@ -26,5 +27,6 @@ module.exports = {
     checkoutNft,
     verifyPurchase,
     userPurchasedNfts,
-    fetchUserCreatedNfts
+    fetchUserCreatedNfts,
+    // userNftPage
 }

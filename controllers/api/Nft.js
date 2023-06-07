@@ -12,7 +12,7 @@ var razorpayInstance = new Razorpay({
 });
 
 const createNft = async (req, res) => {
-    // console.log("shamm", req.file);
+    console.log("shamm", req.file);
     try {
 
         const schema = Joi.object({
@@ -204,13 +204,22 @@ const fetchUserCreatedNfts = async (req, res) => {
         
         const createdNfts = await Nft.find({owner: req.authUserId});
         
-        return Response.successResponseData(res, "Nfts fetched successfully", createdNfts);
+        // return Response.successResponseData(res, "Nfts fetched successfully", createdNfts);
+        return res.render("nft/usernfts", { nfts:createdNfts})
 
     } catch (error) {
         console.log("error", error);
         return res.status(500).json({ error: "Something went wrong" })
     }
 }
+
+// const userNftPage = async (req, res) => {
+//     try {
+//         return res.render("nft/usernfts")
+//     } catch (error) {
+//         console.log("error", error);
+//     }
+// }
 module.exports = {
     createNft,
     purchaseNft,
@@ -218,5 +227,6 @@ module.exports = {
     checkoutNft,
     verifyPurchase,
     userPurchasedNfts,
-    fetchUserCreatedNfts
+    fetchUserCreatedNfts,
+    // userNftPage
 }

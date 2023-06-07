@@ -31,6 +31,9 @@ app.use("/api/v1/nft", nftRouter);
 app.set("views", path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
+// app.get('/test',(req,res)=>{
+//     res.json({message:'test successful'})
+// })
 app.listen(Port, (err) => {
     if (err) {
         console.log("Error=>", err);

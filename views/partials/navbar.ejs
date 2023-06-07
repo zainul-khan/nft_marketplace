@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Navbar Styles */
+        /* #25b18e */
+        nav{
+            background: #141416;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #616676;
+        }
+        .left-column{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 30%;
+        }
+        .navbar-menu {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+    
+    }
+    .navbar-menu li ul{
+        margin-left:4px;
+    }
+    .navbar-menu li {
+      margin-right: 20px;
+    }
+    .navbar-menu li a{
+        color: #616676;
+        text-decoration: none;
+    }
+    .right-column a{
+        text-decoration: none;
+        padding: 15px;
+       
+        color: #fff;
+        border-radius:50px;
+
+    }
+    .right-column a:nth-child(1){
+        background: #141416;
+        border: 1px solid #fff;
+    }
+    .right-column a:nth-child(2){
+        background:#25b18e ;
+    }
+    strong{
+        color: #25b18e;
+    }
+      </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="left-column">
+        <h1>nft <strong>Bazaar</strong></h1>
+        <ul class="navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+    </div>
+    <div class="right-column">
+        <a href="/api/v1/nft/created_nfts">My NFTs</a>
+        <a href="#">Purchased NFTs</a>
+    </div>
+
+      </nav>
+</body>
+</html>

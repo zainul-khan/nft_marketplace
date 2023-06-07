@@ -1,5 +1,5 @@
 const nftRouter = require("express").Router()
-const {createNft, purchaseNft, fetchNfts, checkoutNft, verifyPurchase, userPurchasedNfts, fetchUserCreatedNfts} = require("../../controllers/Index");
+const {createNft, purchaseNft, fetchNfts, checkoutNft, verifyPurchase, userPurchasedNfts, fetchUserCreatedNfts,userNftPage} = require("../../controllers/Index");
 const {userAuth} = require("../../middleware/UserAuth");
 const multer = require("multer");
 
@@ -26,6 +26,7 @@ nftRouter.post("/purchase", userAuth,purchaseNft);
 nftRouter.put("/verify_purchase", userAuth, verifyPurchase);
 nftRouter.get("/puchased_nfts", userAuth, userPurchasedNfts);
 nftRouter.get("/created_nfts", userAuth, fetchUserCreatedNfts)
+// nftRouter.get("/usernftpage", userAuth, userNftPage)
 //purchased nfts
 
 
