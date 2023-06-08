@@ -2,7 +2,8 @@ const {
     register,
     login,
     logout,
-    loginPage
+    loginPage,
+    registerPage
 } = require("./api/Auth");
 
 const {
@@ -28,5 +29,6 @@ module.exports = {
     verifyPurchase,
     userPurchasedNfts,
     fetchUserCreatedNfts,
-    // userNftPage
+    registerPage
+   
 }

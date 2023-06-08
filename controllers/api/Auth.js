@@ -136,5 +136,9 @@ const logout = async (req, res) => {
         return res.status(500).json({ error: "Something went wrong" });
     }
 }
+const registerPage=(req,res)=>{
+    return res.status(200).render('login/register')
 
-module.exports = { register, login, logout, loginPage }
+}
+
+module.exports = { register, login, logout, loginPage,registerPage }

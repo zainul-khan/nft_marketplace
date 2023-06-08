@@ -12,7 +12,7 @@ var razorpayInstance = new Razorpay({
 });
 
 const createNft = async (req, res) => {
-    console.log("shamm", req.file);
+    // console.log("shamm", req.file);
     try {
 
         const schema = Joi.object({
@@ -191,7 +191,8 @@ const userPurchasedNfts = async (req, res) => {
             populate: 'owner',
         });
         
-        return Response.successResponseData(res, "Nfts fetched successfully", userNfts);
+        // return Response.successResponseData(res, "Nfts fetched successfully", userNfts);
+        return res.status(200).render('nft/purchased',{nfts:userNfts})
 
     } catch (error) {
         console.log("error", error);

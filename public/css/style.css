@@ -8,3 +8,332 @@ body{
     background: #141416;
     font-family: 'Poppins', sans-serif;
 }
+input{
+    outline: none;
+}
+h1{
+    color: #fff;
+}
+.home-banner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    color: #fff;
+}
+
+
+nav{
+    background: #141416;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #616676;
+}
+.left-column{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+}
+.navbar-menu {
+list-style-type: none;
+display: flex;
+align-items: center;
+
+}
+.navbar-menu li ul{
+margin-left:4px;
+}
+.navbar-menu li {
+margin-right: 20px;
+}
+.navbar-menu li a{
+color: #616676;
+text-decoration: none;
+}
+.right-column a,.home-login-btn{
+text-decoration: none;
+padding: 15px;
+color: #fff;
+border-radius:50px;
+}
+.home-login-btn{
+    width: 100px;
+    text-align: center;
+}
+.right-column a:nth-child(1),.home-login-btn{
+background: #141416;
+border: 1px solid #fff;
+}
+.right-column a:nth-child(2){
+background:#25b18e ;
+}
+strong{
+color: #25b18e;
+}
+.login-form {
+    background: #ffffff;
+    padding: 20px;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin:  0 auto;
+  }
+
+
+  .login-form h1 {
+    text-align: center;
+  }
+
+  .login-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .login-form input[type="submit"] {
+    background: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .login-form input[type="submit"]:hover {
+    background: #25b18e;
+  }
+  .redirect-register-btn{
+    text-decoration: none;
+    margin-top: 10px;
+
+  }
+  .banner-second{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .banner-second img{
+    height: 500px;
+    width: 300px;
+    border-radius: 15px;
+  }
+  .banner-second p{
+    color: #616676;;
+  }
+  .sample-checkout-card{
+    height: 500px;
+    width: 300px;
+    border-radius: 20px;
+   
+  }
+  .sample-checkout-head{
+    background: #25b18e;
+    height: 200px;
+    width: 100%;
+
+  }
+  .sample-number{
+   
+    padding: 10px;
+  }
+  .middle-box{
+    background: #fff;
+    padding-bottom: 20px;
+  }
+  .sample-payment-btn{
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    background: #25b18e;
+    margin: auto;
+  }
+  .sample-payment-btn p{
+    color: #fff;
+  }
+  .nft-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .nft-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .nft-details {
+    margin-top: 20px;
+  }
+
+  .nft-details p {
+    margin: 5px 0;
+  }
+
+  .buy-now-btn {
+    background: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .create-btn{
+    background:#25b18e ;
+    border-radius: 30px;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+
+}
+.modal{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+
+}
+.modal-form{
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+     
+   
+}
+.form-field{
+    display: flex;
+    flex-direction: column;
+}
+.input-fields{
+    padding: 10px;
+}
+.input-btn{
+    margin: 10px;
+    padding: 10px;
+    background:#25b18e ;
+    border-radius: 30px;
+    border: none;
+    width: 100px;
+    color: #fff;
+}
+.close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    
+}
+.nft-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nft-item {
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .nft-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .nft-name {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .nft-description {
+    margin-top: 5px;
+  }
+
+  .nft-price {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  .nft-purchace-btn{
+    background: #45a049;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+  }
+  .user-nft-card{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.user-nft-item{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    color: #fff;
+}
+.user-nft-image{
+    width:300px;
+    height: 400px;
+    border-radius: 15px;
+}
+.user-nft-title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #616676;;
+}
+.price-box{
+    border: 1px solid #25b18e;
+    height: 30px;
+    width: 100px;
+    color: #25b18e;
+    text-align: center;
+    margin: 5px;
+    border-radius: 2px;
+}
+.user-nft-name{
+    
+}
