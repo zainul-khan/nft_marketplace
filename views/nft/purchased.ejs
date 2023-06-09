@@ -9,6 +9,26 @@
 </head>
 <body>
     <%-include ('../partials/navbar.ejs')-%>
-   
+    <div class="user-nft-card">
+        <% nfts.forEach(nft => { %>
+          <div class="user-nft-item">
+            <img class="user-nft-image" src="https://assets.website-files.com/637be5d0f2736f32b8ad98cd/638e627f643cfa7dd56beb96_qIsIXihKZeVDop6AZWt1j6gxOnYZ_oGfr09PzlJDL_H4YWasvDrNuTXK8Qrmh0oL6ppWI3RaGU5vMif2gNwO38UdWWei4eZCNhbfdrVlm5qHV3zVYIk6qtBuFvdkoo0HexhmSmvn.jpeg" alt="<%= nft.name %>">
+            <div class="user-nft-title">
+                <h2 class="user-nft-name"><%= nft.nft_id.name %></h2>
+                <div class="price-box">
+                    <p class="user-nft-price">Price: $<%= nft.nft_id.price%></p>
+                </div>
+            </div>
+            <p class="user-nft-description"><%= nft.nft_id.description %></p>
+            <div class="break"></div>
+             <p class="nft-owner"><span style="color: #616676;">Owned By:</span> <%= nft.nft_id.owner.name %></p>
+             <div class="break"></div>
+             <p class="nft-owner"><span style="color: #616676;">Purchased On:</span><%=nft.nft_id.createdAt.toLocaleTimeString()%></p>
+          </div>
+        <% }) %>
+    </div>
+    <script>
+        console.log('<% nfts %>')
+    </script>
 </body>
 </html>

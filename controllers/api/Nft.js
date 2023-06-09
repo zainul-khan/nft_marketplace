@@ -190,7 +190,7 @@ const userPurchasedNfts = async (req, res) => {
             path:'nft_id',
             populate: 'owner',
         });
-        
+        console.log(userNfts)
         // return Response.successResponseData(res, "Nfts fetched successfully", userNfts);
         return res.status(200).render('nft/purchased',{nfts:userNfts})
 

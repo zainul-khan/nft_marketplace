@@ -10,6 +10,7 @@ body{
 }
 input{
     outline: none;
+    
 }
 h1{
     color: #fff;
@@ -174,7 +175,7 @@ color: #25b18e;
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
-    border: 2px solid red;
+    border: 2px solid #25b18e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,7 +196,7 @@ color: #25b18e;
   }
 
   .buy-now-btn {
-    background: #4CAF50;
+    background: #25b18e;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -294,12 +295,14 @@ color: #25b18e;
     font-size: 18px;
   }
   .nft-purchace-btn{
-    background: #45a049;
+    background: #25b18e;
     padding: 8px 12px;
     border: none;
     border-radius: 8px;
     color: white;
     cursor: pointer;
+    margin-top: 3px;
+    text-decoration: none;
   }
   .user-nft-card{
     margin: 20px;
@@ -336,4 +339,49 @@ color: #25b18e;
 }
 .user-nft-name{
     
+}
+.registration-form{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+}
+.registration-form form label{
+  color: #616676;
+}
+.registration-form form{
+  background: #181e2e;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+.registration-form p{
+  font-size: small;
+}
+.registration-form form input{
+  background: #616676;
+  border: none;
+ padding: 15px;
+  border-radius: 2px;
+  margin: 10px;
+  color: #fff;
+}
+.registration-form form input[type="submit"]{
+  background: #25b18e;
+  color: #fff;
+
+}
+.nft-container{
+  margin: auto;
+  color: #fff;
+}
+.break{
+  height: 1px;
+  background: #616676;
+  width: 100%;
+  margin-bottom: 5px;
 }

@@ -17,6 +17,8 @@
 </head>
 <link rel="stylesheet" type="text/css" href="/public/css/style.css">
 <body>
+  <%-include ('../partials/navbar.ejs')-%>
+  <br>
   <div class="nft-container">
     <img class="nft-image" src="<%= nftExist.image %>" alt="The Golden Bored Ape">
     <div class="nft-details">
@@ -58,7 +60,7 @@
       $("button").click(function () {
 
         var settings = {
-          "url": "http://localhost:8000/api/v1/nft/purchase",
+          "url": "http://localhost:5000/api/v1/nft/purchase",
           "method": "POST",
           "timeout": 0,
           "headers": {
@@ -109,7 +111,7 @@
           // alert(`orderId ${response.razorpay_order_id}`);
           // alert(`signature ${response.razorpay_signature}`)
           var settingSuccess = {
-          "url": "http://localhost:8000/api/v1/nft/verify_purchase",
+          "url": "http://localhost:5000/api/v1/nft/verify_purchase",
           "method": "PUT",
           "timeout": 0,
           "headers": {
@@ -147,7 +149,7 @@
       rzp1.on('payment.failed', function (response) {
         console.log("error=>", response.error);
         var settingFailure = {
-          "url": "http://localhost:8000/api/v1/nft/verify_purchase",
+          "url": "http://localhost:5000/api/v1/nft/verify_purchase",
           "method": "PUT",
           "timeout": 0,
           "headers": {

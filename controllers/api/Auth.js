@@ -12,7 +12,7 @@ const register = async (req, res) => {
             name: Joi.string().min(3).max(40).required(),
             email: Joi.string().email().required(),
             password: Joi.string().min(5).required(),
-            phone: Joi.array().items(Joi.string()).required(),
+            phone: Joi.string().min(3).max(40).required(),
         });
 
         const { error, value } = schema.validate(req.body);
