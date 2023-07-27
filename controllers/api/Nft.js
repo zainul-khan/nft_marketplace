@@ -83,7 +83,6 @@ const checkoutNft = async (req, res) => {
 
 const purchaseNft = async (req, res) => {
     try {
-        console.log("haeettt", req.query, req.body);
         const nftId = req.body.nftid;
         const fetchNft = await Nft.findOne({ _id: nftId });
 
